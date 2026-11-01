@@ -2,94 +2,211 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>جياشي وزمن مافي</title>
+
 <style>
-*{box-sizing:border-box}
-body{
-margin:0;background:#080f1c;color:#e8f1ff;
-font-family:Arial,sans-serif;padding:20px;
+* {
+    box-sizing: border-box;
 }
-header{
-text-align:center;padding:25px 10px;
-border-bottom:1px solid #17445a;
+
+body {
+    margin: 0;
+    background: #080f1c;
+    color: #e8f1ff;
+    font-family: Arial, sans-serif;
+    padding: 15px;
 }
-.logo{font-size:38px;color:#00e5c3}
-h1{color:#00e5c3;font-size:25px}
-.subtitle{color:#8ba5b8}
-.card{
-background:#111e30;border:1px solid #17445a;
-border-radius:14px;padding:20px;margin-top:20px;
+
+header {
+    text-align: center;
+    padding: 25px 10px;
+    border-bottom: 1px solid #17445a;
 }
-h3{color:#00e5c3}
-input{
-width:100%;padding:15px;border-radius:9px;
-border:1px solid #24516a;background:#081321;
-color:white;font-size:16px;margin:12px 0;
+
+.logo {
+    font-size: 35px;
+    color: #00e5c3;
 }
-button{
-width:100%;padding:15px;border:0;
-border-radius:9px;background:#00bfa5;
-color:#06131d;font-size:17px;font-weight:bold;
+
+h1 {
+    color: #00e5c3;
+    font-size: 27px;
+    margin: 10px 0;
 }
-.status{color:#00e5c3}
-.item{
-background:#0b1727;padding:15px;
-border-radius:9px;margin-top:12px;
+
+.subtitle {
+    color: #8ba5b8;
+    line-height: 1.8;
 }
-footer{text-align:center;color:#71899c;margin-top:30px}
+
+.card {
+    background: #111e30;
+    border: 1px solid #17445a;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+h3 {
+    color: #00e5c3;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 9px;
+    border: 1px solid #24516a;
+    background: #081321;
+    color: white;
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    border-radius: 9px;
+    background: #00bfa5;
+    color: #06131d;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+.status {
+    color: #00e5c3;
+}
+
+.item {
+    background: #0b1727;
+    padding: 15px;
+    border-radius: 9px;
+    margin-top: 12px;
+}
+
+#result {
+    line-height: 2;
+    overflow-wrap: anywhere;
+}
+
+#result a {
+    color: #00e5c3;
+}
+
+footer {
+    text-align: center;
+    color: #71899c;
+    margin-top: 30px;
+    line-height: 2;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">◈ 🛡️ ◈</div>
-<h1>جياشي وزمن مافي</h1>
-<div class="subtitle">منصة المعلومات العامة والتحليل الرقمي</div>
-<p class="status">● النظام جاهز</p>
+    <div class="logo">◈</div>
+    <h1>جياشي وزمن مافي</h1>
+    <div class="subtitle">
+        منصة المعلومات العامة والتحليل الرقمي
+    </div>
+    <p class="status">● النظام جاهز</p>
 </header>
 
 <div class="card">
-<h3>🔍 فحص حساب TikTok</h3>
-<label>اسم المستخدم</label>
-<input id="username" placeholder="@username">
-<button onclick="analyze()">بدء الفحص</button>
-<div id="result"></div>
+    <h3>🔎 فحص حساب TikTok</h3>
+
+    <label for="username">اسم المستخدم</label>
+
+    <input
+        id="username"
+        type="text"
+        placeholder="@username"
+        autocomplete="off"
+    >
+
+    <button onclick="analyze()">بدء الفحص</button>
+
+    <div id="result"></div>
 </div>
 
 <div class="card">
-<h3>📊 لوحة المعلومات</h3>
-<div class="item">حالة النظام: <span class="status">متصل بالواجهة</span></div>
-<div class="item">نوع التحليل: معلومات عامة متاحة للجمهور</div>
-<div class="item">حماية البيانات: مفعّلة</div>
+    <h3>📊 لوحة المعلومات</h3>
+
+    <div class="item">
+        حالة النظام:
+        <span class="status">متصل بالواجهة</span>
+    </div>
+
+    <div class="item">
+        نوع التحليل:
+        معلومات الحسابات العامة
+    </div>
+
+    <div class="item">
+        حماية البيانات:
+        مفعلة
+    </div>
 </div>
 
 <div class="card">
-<h3>🗺️ البحث الجغرافي</h3>
-<p>البحث عن المواقع العامة التي يحددها المستخدم.</p>
-<button onclick="window.open('https://www.google.com/maps','_blank')">
-فتح الخرائط
-</button>
+    <h3>🗺️ البحث الجغرافي</h3>
+
+    <p>يمكنك فتح الخرائط للبحث عن المواقع.</p>
+
+    <button onclick="window.open('https://www.google.com/maps','_blank')">
+        فتح الخرائط
+    </button>
 </div>
 
 <footer>
-JIASHI WZAMAN MAFI © 2026
-<br>CYBER INTELLIGENCE
+    JIASHI WZAMAN MAFI © 2026
+    <br>
+    CYBER INTELLIGENCE
 </footer>
 
 <script>
-function analyze(){
-let u=document.getElementById('username').value.trim();
-let r=document.getElementById('result');
-if(!u){
-r.innerHTML='<p style="color:#ff7777">أدخل اسم المستخدم أولاً</p>';
-return;
-}
-u=u.replace(/^@/,'');
-r.innerHTML='<p class="status">تم تجهيز رابط الحساب العام:</p>'+
-'<a style="color:#00e5c3" target="_blank" href="https://www.tiktok.com/@'+encodeURIComponent(u)+'">فتح حساب TikTok</a>'+
-'<p>هذا إصدار الواجهة الأولي، وليس نتيجة فحص آلي.</p>';
+function analyze() {
+    const input = document.getElementById("username");
+    const result = document.getElementById("result");
+
+    let username = input.value.trim().replace(/^@/, "");
+
+    if (!username) {
+        result.innerHTML =
+            '<p style="color:#ff7777">⚠️ أدخل اسم المستخدم أولاً</p>';
+        return;
+    }
+
+    if (!/^[a-zA-Z0-9._]{2,24}$/.test(username)) {
+        result.innerHTML =
+            '<p style="color:#ff7777">❌ اسم المستخدم غير صحيح</p>';
+        return;
+    }
+
+    const profile =
+        "https://www.tiktok.com/@" + encodeURIComponent(username);
+
+    result.innerHTML = `
+        <div class="item">
+            <h3>✅ تم تجهيز الحساب بنجاح</h3>
+            <p>اسم المستخدم: @${username}</p>
+            <a href="${profile}" target="_blank" rel="noopener">
+                فتح حساب TikTok العام
+            </a>
+            <p>
+                هذه معاينة أولية للحساب وليست نتيجة فحص آلي.
+            </p>
+        </div>
+    `;
 }
 </script>
+
 </body>
 </html>
